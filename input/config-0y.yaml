@@ -1,0 +1,155 @@
+points:
+  key:
+    padding: cy
+    footprints:
+      choc:
+        type: choc
+        anchor:
+          rotate: 180
+        nets:
+          from: =column_net
+          to: GND
+        params:
+          keycaps: true
+          reverse: true
+  zones:
+    matrix:
+      anchor:
+        rotate: 10
+      columns:
+        pinky:
+          row_overrides:
+            bottom:
+              column_net: P3
+            home:
+              column_net: P2
+            top:
+              column_net: P1
+        ring:
+          spread: 20
+          rotate: -5
+          origin: [-12, -19]
+          stagger: 15
+          row_overrides:
+            bottom:
+              column_net: P3
+            home:
+              column_net: P2
+            top:
+              column_net: P1
+        middle:
+          rotate: -3
+          origin: [-12, -19]
+          stagger: 10
+          row_overrides:
+            bottom:
+              column_net: P3
+            home:
+              column_net: P2
+            top:
+              column_net: P1
+        index:
+          rotate: -6
+          stagger: -12
+          spread: 18.9
+          row_overrides:
+            bottom:
+              column_net: P3
+            home:
+              column_net: P2
+            top:
+              column_net: P1
+        inner:
+          row_overrides:
+            bottom:
+              column_net: P3
+            home:
+              column_net: P2
+            top:
+              column_net: P1
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+          row_overrides:
+            thumb:
+              column_net: P1
+        home:
+          spread: 19
+          rotate: -28
+          origin: [-9, -9]
+          row_overrides:
+            thumb:
+              column_net: P1
+        far:
+          spread: 19
+          rotate: -28
+          origin: [-9.5, -9]
+          row_overrides:
+            thumb:
+              column_net: P1
+      rows:
+        thumb:
+  rotate: -2
+pcbs:
+  main:
+    outlines:
+      main:
+        outline: cutout
+    footprints:
+      promicro:
+        type: promicro_pretty
+        anchor:
+          ref: matrix_inner_home
+          shift: [20, 7.75]
+          rotate: -90
+        params:
+          orientation: down
+      b3u1000p:
+        type: b3u1000p
+        nets:
+          r1: RST  
+          r2: GND
+        anchor:
+          ref: matrix_inner_home
+          shift: [20, -12]
+          rotate: 0
+        params:
+          reverse: true 
+outlines:
+  exports:
+    raw: 
+      - type: keys
+        side: left
+        size: [1.4cx , 1.3cx]
+      - type: rectangle
+        size: [22, 65.7]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [9, -20]
+      - type: rectangle
+        size: [20, 20]
+        anchor:
+          ref: matrix_inner_home
+          shift: [0, -40]
+      - type: rectangle
+        size: [20, 20]
+        anchor:
+          ref: matrix_inner_home
+          shift: [10, -38.6]
+          rotate: -56
+    cutout:
+      - type: outline
+        name: raw
+        fillet: 2
+    keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false
