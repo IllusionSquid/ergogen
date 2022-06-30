@@ -8,7 +8,7 @@ points:
           rotate: 180
         nets:
           from: =column_net
-          to: GND
+          to: =row_net
         params:
           keycaps: true
           reverse: true
@@ -20,11 +20,14 @@ points:
         pinky:
           row_overrides:
             bottom:
-              column_net: P18
+              column_net: P1
+              row_net: P8
             home:
-              column_net: P9
+              column_net: P1
+              row_net: P7
             top:
-              column_net: P4
+              column_net: P1
+              row_net: P6
         ring:
           spread: 20
           rotate: -5
@@ -32,41 +35,53 @@ points:
           stagger: 15
           row_overrides:
             bottom:
-              column_net: P15
+              column_net: P0
+              row_net: P8
             home:
-              column_net: P8
+              column_net: P0
+              row_net: P7
             top:
-              column_net: P3
+              column_net: P0
+              row_net: P6
         middle:
           rotate: -3
           origin: [-12, -19]
           stagger: 10
           row_overrides:
             bottom:
-              column_net: P14
+              column_net: P2
+              row_net: P8
             home:
-              column_net: P7
+              column_net: P2
+              row_net: P7
             top:
               column_net: P2
+              row_net: P6
         index:
           rotate: -6
           stagger: -12
           spread: 18.9
           row_overrides:
             bottom:
-              column_net: P16
+              column_net: P3
+              row_net: P8
             home:
-              column_net: P6
+              column_net: P3
+              row_net: P7
             top:
-              column_net: P0
+              column_net: P3
+              row_net: P6
         inner:
           row_overrides:
             bottom:
-              column_net: P10
+              column_net: P4
+              row_net: P8
             home:
-              column_net: P5
+              column_net: P4
+              row_net: P7
             top:
-              column_net: P1
+              column_net: P4
+              row_net: P6
       rows:
         bottom:
         home:
@@ -79,21 +94,24 @@ points:
         near:
           row_overrides:
             thumb:
-              column_net: P19
+              column_net: P5
+              row_net: P8
         home:
           spread: 19
           rotate: -28
           origin: [-9, -9]
           row_overrides:
             thumb:
-              column_net: P20
+              column_net: P5
+              row_net: P7
         far:
           spread: 19
           rotate: -28
           origin: [-9.5, -9]
           row_overrides:
             thumb:
-              column_net: P21
+              column_net: P5
+              row_net: P6
       rows:
         thumb:
   rotate: -2
