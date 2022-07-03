@@ -32,12 +32,15 @@ points:
             bottom:
               column_net: Col4
               row_net: Row2
+              bind: [0, 1, 0, 1]
             home:
               column_net: Col4
               row_net: Row1
+              bind: [0, 7, 0, 1]
             top:
               column_net: Col4
               row_net: Row0
+              bind: [0, 7, 0, 1]
         ring:
           spread: 20
           rotate: -5
@@ -47,12 +50,14 @@ points:
             bottom:
               column_net: Col3
               row_net: Row2
+              bind: [0, 1, 0, 7]
             home:
               column_net: Col3
               row_net: Row1
             top:
               column_net: Col3
               row_net: Row0
+              bind: [0, 7, 0, 1]
         middle:
           rotate: -3
           origin: [-12, -19]
@@ -61,12 +66,15 @@ points:
             bottom:
               column_net: Col2
               row_net: Row2
+              bind: [0, 7, 0, 7]
             home:
               column_net: Col2
               row_net: Row1
+              bind: [0, 0, 0, 7]
             top:
               column_net: Col2
               row_net: Row0
+              bind: [0, 1, 0, 1]
         index:
           rotate: -6
           stagger: -12
@@ -75,12 +83,15 @@ points:
             bottom:
               column_net: Col1
               row_net: Row2
+              bind: [0, 7, 0, 1]
             home:
               column_net: Col1
               row_net: Row1
+              bind: [0, 7, 0, 7]
             top:
               column_net: Col1
               row_net: Row0
+              bind: [0, 7, 0, 7]
         inner:
           row_overrides:
             bottom:
@@ -96,6 +107,7 @@ points:
         bottom:
         home:
         top:
+          bind: [0, 7, 0, 0]
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
@@ -106,6 +118,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row2
+              bind: [2, 7, 0, 1]
         home:
           spread: 19
           rotate: -28
@@ -114,6 +127,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row1
+              bind: [0, 2, 0, 2]
         far:
           spread: 19
           rotate: -28
@@ -122,6 +136,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row0
+              bind: [0, 1, 0, 12]
       rows:
         thumb:
   rotate: -2
@@ -135,7 +150,7 @@ pcbs:
         type: promicro_pretty
         anchor:
           ref: matrix_inner_home
-          shift: [20, 7.75]
+          shift: [20, 6.5]
           rotate: -90
         params:
           orientation: down
@@ -202,28 +217,13 @@ outlines:
     raw: 
       - type: keys
         side: left
-        size: [1.4cx , 1.3cx]
+        size: [1cx - 0.5 , 1cx -0.5]
       - type: rectangle
-        size: [22, 65.7]
+        size: [23, 67.75]
         anchor:
           ref: matrix_inner_bottom
-          shift: [9, -20]
-      - type: rectangle
-        size: [20, 20]
-        anchor:
-          ref: matrix_inner_home
-          shift: [0, -40]
-      - type: rectangle
-        size: [20, 20]
-        anchor:
-          ref: matrix_inner_home
-          shift: [10, -38.6]
-          rotate: -56
-      - type: rectangle
-        size: [60, 30]
-        anchor:
-          ref: thumbfan_near_thumb
-          shift: [-63, -11.7]
+          shift: [8, -25]
+      
     cutout:
       - type: outline
         name: raw
