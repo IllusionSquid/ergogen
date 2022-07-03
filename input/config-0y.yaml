@@ -30,14 +30,14 @@ points:
         pinky:
           row_overrides:
             bottom:
-              column_net: P1
-              row_net: P8
+              column_net: Col4
+              row_net: Row2
             home:
-              column_net: P1
-              row_net: P7
+              column_net: Col4
+              row_net: Row1
             top:
-              column_net: P1
-              row_net: P6
+              column_net: Col4
+              row_net: Row0
         ring:
           spread: 20
           rotate: -5
@@ -45,53 +45,53 @@ points:
           stagger: 15
           row_overrides:
             bottom:
-              column_net: P0
-              row_net: P8
+              column_net: Col3
+              row_net: Row2
             home:
-              column_net: P0
-              row_net: P7
+              column_net: Col3
+              row_net: Row1
             top:
-              column_net: P0
-              row_net: P6
+              column_net: Col3
+              row_net: Row0
         middle:
           rotate: -3
           origin: [-12, -19]
           stagger: 10
           row_overrides:
             bottom:
-              column_net: P2
-              row_net: P8
+              column_net: Col2
+              row_net: Row2
             home:
-              column_net: P2
-              row_net: P7
+              column_net: Col2
+              row_net: Row1
             top:
-              column_net: P2
-              row_net: P6
+              column_net: Col2
+              row_net: Row0
         index:
           rotate: -6
           stagger: -12
           spread: 18.9
           row_overrides:
             bottom:
-              column_net: P3
-              row_net: P8
+              column_net: Col1
+              row_net: Row2
             home:
-              column_net: P3
-              row_net: P7
+              column_net: Col1
+              row_net: Row1
             top:
-              column_net: P3
-              row_net: P6
+              column_net: Col1
+              row_net: Row0
         inner:
           row_overrides:
             bottom:
-              column_net: P4
-              row_net: P8
+              column_net: Col0
+              row_net: Row2
             home:
-              column_net: P4
-              row_net: P7
+              column_net: Col0
+              row_net: Row1
             top:
-              column_net: P4
-              row_net: P6
+              column_net: Col0
+              row_net: Row0
       rows:
         bottom:
         home:
@@ -104,24 +104,24 @@ points:
         near:
           row_overrides:
             thumb:
-              column_net: P5
-              row_net: P8
+              column_net: Col5
+              row_net: Row2
         home:
           spread: 19
           rotate: -28
           origin: [-9, -9]
           row_overrides:
             thumb:
-              column_net: P5
-              row_net: P7
+              column_net: Col5
+              row_net: Row1
         far:
           spread: 19
           rotate: -28
           origin: [-9.5, -9]
           row_overrides:
             thumb:
-              column_net: P5
-              row_net: P6
+              column_net: Col5
+              row_net: Row0
       rows:
         thumb:
   rotate: -2
@@ -146,7 +146,7 @@ pcbs:
           r2: GND
         anchor:
           ref: matrix_inner_home
-          shift: [25, -12]
+          shift: [20, -28]
           rotate: 90
         params:
           reverse: true
@@ -154,27 +154,49 @@ pcbs:
         type: via
         anchor:
           ref: matrix_inner_home
-          shift: [28, -12]
+          shift: [23, -28]
         nets:
           net: GND
       via3:
         type: via
         anchor:
           ref: matrix_inner_home
-          shift: [22, -12]
+          shift: [17, -28]
         nets:
           net: RST
       pcm12:
         type: pcm12
         anchor:
           ref: thumbfan_near_thumb
-          shift: [35.7, 10]
+          shift: [35.7, 6]
           rotate: 90
         nets:
           from: pos  
           to: RAW
         params:
           reverse: true 
+      trrs:
+        type: trrs
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [38, 12]
+          rotate: -90
+        nets:
+          A: SCL
+          B: SCL
+          C: GND
+          D: VCC
+        params:
+          reverse: true
+          symmetric: true
+      bat:
+        type: bat
+        nets: 
+          neg: GND
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [20, 10]
+          rotate: 90
 outlines:
   exports:
     raw: 
