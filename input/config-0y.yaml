@@ -2,6 +2,15 @@ points:
   key:
     padding: cy
     footprints:
+      choc_hotswap:
+        type: choc
+        nets:
+          from: =column_net
+          to: =row_net
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
       choc:
         type: choc
         anchor:
@@ -15,7 +24,8 @@ points:
   zones:
     matrix:
       anchor:
-        rotate: 10
+        rotate: 16
+        shift: [50, -100]
       columns:
         pinky:
           row_overrides:
@@ -136,8 +146,33 @@ pcbs:
           r2: GND
         anchor:
           ref: matrix_inner_home
-          shift: [20, -12]
-          rotate: 0
+          shift: [25, -12]
+          rotate: 90
+        params:
+          reverse: true
+      via2:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [28, -12]
+        nets:
+          net: GND
+      via3:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [22, -12]
+        nets:
+          net: RST
+      pcm12:
+        type: pcm12
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [35.7, 10]
+          rotate: 90
+        nets:
+          from: pos  
+          to: RAW
         params:
           reverse: true 
 outlines:
@@ -162,6 +197,11 @@ outlines:
           ref: matrix_inner_home
           shift: [10, -38.6]
           rotate: -56
+      - type: rectangle
+        size: [60, 30]
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [-63, -11.7]
     cutout:
       - type: outline
         name: raw
