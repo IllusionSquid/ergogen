@@ -15,7 +15,8 @@
 module.exports = {
   nets: {
     from: undefined,
-    to: undefined
+    to: undefined,
+    diode: undefined
   },
   params: {
     class: 'S',
@@ -70,17 +71,19 @@ module.exports = {
         (fp_line (start 8 1.25) (end 8 1.65) (layer F.SilkS) (width 0.1))
         (fp_line (start 8 2.25) (end 8 2.75) (layer B.SilkS) (width 0.1))
         (fp_line (start 8.4 2.25) (end 8 1.65) (layer B.SilkS) (width 0.1))
-        (fp_line (start 8.6 2.25) (end 8.4 2.25) (layer B.SilkS) (width 0.1))
+        (fp_line (start 7.6 2.25) (end 8.4 2.25) (layer B.SilkS) (width 0.1))
         (fp_line (start 8 1.65) (end 7.6 2.25) (layer B.SilkS) (width 0.1))
         (fp_line (start 8 1.65) (end 8.55 1.65) (layer B.SilkS) (width 0.1))
         (fp_line (start 8 1.65) (end 7.45 1.65) (layer B.SilkS) (width 0.1))
         (fp_line (start 8 1.25) (end 8 1.65) (layer B.SilkS) (width 0.1))
-    
+       
         ${''/* SMD pads on both sides */}
-        (pad 1 smd rect (at 8 0.35 ${p.rot-90}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.net.to.str})
-        (pad 2 smd rect (at 8 3.65 ${p.rot-90}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.net.from.str})
-        (pad 1 smd rect (at 8 0.35 ${p.rot-90}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.net.to.str})
-        (pad 2 smd rect (at 8 3.65 ${p.rot-90}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.net.from.str})
+        (pad 3 smd rect (at 8 0.35 ${p.rot-90}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.net.to.str})
+        (pad 4 smd rect (at 8 3.65 ${p.rot-90}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.net.diode.str})
+        (pad 3 smd rect (at 8 0.35 ${p.rot-90}) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) ${p.net.to.str})
+        (pad 4 smd rect (at 8 3.65 ${p.rot-90}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.net.diode.str})
+
+        (pad 3 thru_hole circle (at 8 1.5) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.to.str})
         `
 
     function pins(def_neg, def_pos, def_side) {
@@ -91,11 +94,11 @@ module.exports = {
     
         ${'' /* net pads */}
         (pad 1 smd rect (at ${def_neg}3.275 -5.95 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask)  ${p.net.from.str})
-        (pad 2 smd rect (at ${def_pos}8.275 -3.75 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask)  ${p.net.to.str})
+        (pad 2 smd rect (at ${def_pos}8.275 -3.75 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask)  ${p.net.diode.str})
 
           ${''/* pins */}
           (pad 1 thru_hole circle (at ${def_pos}5 3.8) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at ${def_pos}0 5.9) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 2 thru_hole circle (at ${def_pos}0 5.9) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.net.diode.str})
         `
     }
     if(p.param.reverse) {

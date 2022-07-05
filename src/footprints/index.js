@@ -2,6 +2,7 @@ module.exports = {
     alps: require('./alps'),
     button: require('./button'),
     choc: require('./choc'),
+    choc_adv: require('./choc_adv'),
     chocmini: require('./chocmini'),
     diode: require('./diode'),
     jstph: require('./jstph'),

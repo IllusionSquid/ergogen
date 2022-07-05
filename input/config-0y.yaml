@@ -3,24 +3,16 @@ points:
     padding: cy
     footprints:
       choc_hotswap:
-        type: choc
+        type: choc_adv
         nets:
           from: =column_net
           to: =row_net
+          diode: =diode
         params:
           keycaps: true
           reverse: true
+          diode: true
           hotswap: true
-      choc:
-        type: choc
-        anchor:
-          rotate: 180
-        nets:
-          from: =column_net
-          to: =row_net
-        params:
-          keycaps: true
-          reverse: true
   zones:
     matrix:
       anchor:
@@ -32,14 +24,17 @@ points:
             bottom:
               column_net: Col4
               row_net: Row2
+              diode: DR2C4
               bind: [0, 1, 0, 1]
             home:
               column_net: Col4
               row_net: Row1
+              diode: DR1C4
               bind: [0, 7, 0, 1]
             top:
               column_net: Col4
               row_net: Row0
+              diode: DR0C4
               bind: [0, 7, 0, 1]
         ring:
           spread: 20
@@ -50,13 +45,16 @@ points:
             bottom:
               column_net: Col3
               row_net: Row2
+              diode: DR2C3
               bind: [0, 1, 0, 7]
             home:
               column_net: Col3
               row_net: Row1
+              diode: DR1C3
             top:
               column_net: Col3
               row_net: Row0
+              diode: DR0C3
               bind: [0, 7, 0, 1]
         middle:
           rotate: -3
@@ -66,14 +64,17 @@ points:
             bottom:
               column_net: Col2
               row_net: Row2
+              diode: DR2C2
               bind: [0, 7, 0, 7]
             home:
               column_net: Col2
               row_net: Row1
+              diode: DR1C2
               bind: [0, 0, 0, 7]
             top:
               column_net: Col2
               row_net: Row0
+              diode: DR0C2
               bind: [0, 1, 0, 1]
         index:
           rotate: -6
@@ -83,26 +84,32 @@ points:
             bottom:
               column_net: Col1
               row_net: Row2
+              diode: DR2C1
               bind: [0, 7, 0, 1]
             home:
               column_net: Col1
               row_net: Row1
+              diode: DR1C1
               bind: [0, 7, 0, 7]
             top:
               column_net: Col1
               row_net: Row0
+              diode: DR0C1
               bind: [0, 7, 0, 7]
         inner:
           row_overrides:
             bottom:
               column_net: Col0
               row_net: Row2
+              diode: DR2C0
             home:
               column_net: Col0
               row_net: Row1
+              diode: DR1C0
             top:
               column_net: Col0
               row_net: Row0
+              diode: DR0C0
       rows:
         bottom:
         home:
@@ -118,6 +125,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row2
+              diode: DR2C5
               bind: [2, 7, 0, 1]
         home:
           spread: 19
@@ -127,6 +135,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row1
+              diode: DR1C5
               bind: [0, 2, 0, 2]
         far:
           spread: 19
@@ -136,6 +145,7 @@ points:
             thumb:
               column_net: Col5
               row_net: Row0
+              diode: DR0C5
               bind: [0, 1, 0, 12]
       rows:
         thumb:
@@ -212,6 +222,15 @@ pcbs:
           ref: thumbfan_near_thumb
           shift: [20, 10]
           rotate: 90
+      # diode:
+      #   type: diode
+      #   nets:
+      #     from: D1
+      #     to: Row0
+      #   anchor:
+      #     ref: matrix_pinky_top
+      #     shift: [8, -2]
+      #     rotate: -90
 outlines:
   exports:
     raw: 
