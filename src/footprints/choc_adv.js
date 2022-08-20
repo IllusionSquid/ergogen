@@ -84,6 +84,7 @@ module.exports = {
         (pad 4 smd rect (at 8 3.65 ${p.rot-90}) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) ${p.net.diode.str})
 
         (pad 3 thru_hole circle (at 8 1.5) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.to.str})
+        (pad 4 thru_hole circle (at 8 2.5) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.diode.str})
         `
 
     function pins(def_neg, def_pos, def_side) {
