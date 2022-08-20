@@ -13,6 +13,7 @@ module.exports = {
     pad: require('./pad'),
     promicro: require('./promicro'),
     promicro_pretty: require('./promicro_pretty'),
+    promicro_pretty_gnd: require('./promicro_pretty_gnd'),
     rgb: require('./rgb'),
     rotary: require('./rotary'),
     scrollwheel: require('./scrollwheel'),
@@ -22,4 +23,5 @@ module.exports = {
     pcm12: require('./pcm12'),
     bat: require('./bat'),
     b3u1000p: require('./b3u1000p'),
+    resetw: require('./resetw'),
 }
