@@ -1,0 +1,268 @@
+points:
+  key:
+    padding: cy
+    footprints:
+      choc_hotswap:
+        type: choc_adv
+        nets:
+          from: =column_net
+          to: =row_net
+          diode: =diode
+        params:
+          keycaps: true
+          reverse: true
+          diode: true
+          hotswap: true
+  zones:
+    matrix:
+      anchor:
+        rotate: 16
+        shift: [50, -100]
+      columns:
+        pinky:
+          row_overrides:
+            bottom:
+              column_net: Col4
+              row_net: Row2
+              diode: DR2C4
+              bind: [0, 1, 0, 1]
+            home:
+              column_net: Col4
+              row_net: Row1
+              diode: DR1C4
+              bind: [0, 7, 0, 1]
+            top:
+              column_net: Col4
+              row_net: Row0
+              diode: DR0C4
+              bind: [0, 7, 0, 1]
+        ring:
+          spread: 20
+          rotate: -5
+          origin: [-12, -19]
+          stagger: 15
+          row_overrides:
+            bottom:
+              column_net: Col3
+              row_net: Row2
+              diode: DR2C3
+              bind: [0, 1, 0, 7]
+            home:
+              column_net: Col3
+              row_net: Row1
+              diode: DR1C3
+            top:
+              column_net: Col3
+              row_net: Row0
+              diode: DR0C3
+              bind: [0, 7, 0, 1]
+        middle:
+          rotate: -3
+          origin: [-12, -19]
+          stagger: 10
+          row_overrides:
+            bottom:
+              column_net: Col2
+              row_net: Row2
+              diode: DR2C2
+              bind: [0, 7, 0, 7]
+            home:
+              column_net: Col2
+              row_net: Row1
+              diode: DR1C2
+              bind: [0, 0, 0, 7]
+            top:
+              column_net: Col2
+              row_net: Row0
+              diode: DR0C2
+              bind: [0, 1, 0, 1]
+        index:
+          rotate: -6
+          stagger: -12
+          spread: 18.9
+          row_overrides:
+            bottom:
+              column_net: Col1
+              row_net: Row2
+              diode: DR2C1
+              bind: [0, 7, 0, 1]
+            home:
+              column_net: Col1
+              row_net: Row1
+              diode: DR1C1
+              bind: [0, 7, 0, 7]
+            top:
+              column_net: Col1
+              row_net: Row0
+              diode: DR0C1
+              bind: [0, 7, 0, 7]
+        inner:
+          row_overrides:
+            bottom:
+              column_net: Col0
+              row_net: Row2
+              diode: DR2C0
+            home:
+              column_net: Col0
+              row_net: Row1
+              diode: DR1C0
+            top:
+              column_net: Col0
+              row_net: Row0
+              diode: DR0C0
+      rows:
+        bottom:
+        home:
+        top:
+          bind: [0, 7, 0, 0]
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row2
+              diode: DR2C5
+              bind: [2, 7, 0, 1]
+        home:
+          spread: 19
+          rotate: -28
+          origin: [-9, -9]
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row1
+              diode: DR1C5
+              bind: [0, 2, 0, 2]
+        far:
+          spread: 19
+          rotate: -28
+          origin: [-9.5, -9]
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row0
+              diode: DR0C5
+              bind: [0, 1, 0, 12]
+      rows:
+        thumb:
+  rotate: -2
+pcbs:
+  main:
+    outlines:
+      main:
+        outline: cutout
+    footprints:
+      promicro:
+        type: promicro_pretty
+        anchor:
+          ref: matrix_inner_home
+          shift: [20, 6.5]
+          rotate: -90
+        params:
+          orientation: down
+      b3u1000p:
+        type: b3u1000p
+        nets:
+          r1: RST  
+          r2: GND
+        anchor:
+          ref: matrix_inner_home
+          shift: [20, -28]
+          rotate: 90
+        params:
+          reverse: true
+      via2:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [23, -28]
+        nets:
+          net: RST
+      via3:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [17, -28]
+        nets:
+          net: GND
+      via4:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [25.5, -30]
+        nets:
+          net: RAW
+      # viar0:
+      #   type: via
+      #   anchor:
+      #     ref: matrix_inner_top
+      #     shift: [10, -0.35]
+      #   nets:
+      #     net: Row0
+      pcm12:
+        type: pcm12
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [35.7, 6]
+          rotate: 90
+        nets:
+          from: pos  
+          to: RAW
+        params:
+          reverse: true 
+      trrs:
+        type: trrs
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [38, 12]
+          rotate: -90
+        nets:
+          A: SCL
+          B: SCL
+          C: GND
+          D: VCC
+        params:
+          reverse: true
+          symmetric: true
+      bat:
+        type: bat
+        nets: 
+          neg: GND
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [20, 10]
+          rotate: 90
+      # diode:
+      #   type: diode
+      #   nets:
+      #     from: D1
+      #     to: Row0
+      #   anchor:
+      #     ref: matrix_pinky_top
+      #     shift: [8, -2]
+      #     rotate: -90
+outlines:
+  exports:
+    raw: 
+      - type: keys
+        side: left
+        size: [1cx - 0.5 , 1cx -0.5]
+      - type: rectangle
+        size: [23, 67.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [8, -25]
+      
+    cutout:
+      - type: outline
+        name: raw
+        fillet: 2
+    keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false
