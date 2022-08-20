@@ -181,14 +181,28 @@ pcbs:
           ref: matrix_inner_home
           shift: [23, -28]
         nets:
-          net: GND
+          net: RST
       via3:
         type: via
         anchor:
           ref: matrix_inner_home
           shift: [17, -28]
         nets:
-          net: RST
+          net: GND
+      via4:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [25.5, -30]
+        nets:
+          net: RAW
+      # viar0:
+      #   type: via
+      #   anchor:
+      #     ref: matrix_inner_top
+      #     shift: [10, -0.35]
+      #   nets:
+      #     net: Row0
       pcm12:
         type: pcm12
         anchor:
