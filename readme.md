@@ -1,3 +1,5 @@
+# NOTE
+This is fork that adds a couple footprints. Note that some footprints have edited names.
 # Ergogen
 
 Ergogen is a keyboard generator that aims to provide a common configuration format to describe **ergonomic** 2D layouts, and generate automatic plates, cases, and (un-routed) PCBs for them.
