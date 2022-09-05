@@ -103,7 +103,7 @@ points:
           row_overrides:
             thumb:
               column_net: K17
-              bind: [2, 7, 0, 1]
+              bind: [20, 7, 0, 60]
         home:
           spread: 19
           rotate: -28
@@ -133,7 +133,7 @@ pcbs:
         type: promicro_pretty_gnd
         anchor:
           ref: matrix_inner_home
-          shift: [20, 6.5]
+          shift: [19, 9]
           rotate: -90
         params:
           orientation: down
@@ -171,13 +171,20 @@ pcbs:
       #     shift: [17, -28]
       #   nets:
       #     net: GND
-      # via4:
-      #   type: via
-      #   anchor:
-      #     ref: matrix_inner_home
-      #     shift: [25.5, -30]
-      #   nets:
-      #     net: RAW
+      via4:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [24.4, -30]
+        nets:
+          net: RAW
+      via5:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [25.5, -30]
+        nets:
+          net: pos
       # viar0:
       #   type: via
       #   anchor:
