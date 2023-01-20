@@ -3,7 +3,7 @@ points:
     padding: cy
     footprints:
       choc_hotswap:
-        type: choc_adv
+        type: choc_diode
         nets:
           from: =column_net
           to: =row_net
