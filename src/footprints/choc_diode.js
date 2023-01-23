@@ -205,37 +205,59 @@ module.exports = {
     )
     `
 
-    const rgb = `
-    (fp_poly (pts (xy 2.8 ${-1.4 + RGB_Offset}) (xy 2.2 ${-1.4 + RGB_Offset}) (xy 2.2 ${-2 + RGB_Offset})) (layer F.SilkS) (width 0.1))
-    (fp_line (start 1.6 ${-1.4 + RGB_Offset}) (end 1.6 ${1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
-    (fp_line (start 1.6 ${1.4 + RGB_Offset}) (end -1.6 ${1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
-    (fp_line (start -1.6 ${1.4 + RGB_Offset}) (end -1.6 ${-1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
-    (fp_line (start -1.6 ${-1.4 + RGB_Offset}) (end 1.6 ${-1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
-    (fp_line (start 1.7 ${-1.5 + RGB_Offset}) (end 1.7 ${1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
-    (fp_line (start 1.7 ${1.5 + RGB_Offset}) (end -1.7 ${1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
-    (fp_line (start -1.7 ${1.5 + RGB_Offset}) (end -1.7 ${-1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
-    (fp_line (start -1.7 ${-1.5 + RGB_Offset}) (end 1.7 ${-1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
-    (pad "1" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "2" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "4" smd rect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "3" smd roundrect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25))
-        
-    `
-
-    function pins(def_neg, def_pos, def_side) {
+    function rgb(reverse) {
       return `
-      ${'' /* holes */}
-      (pad "" np_thru_hole circle (at ${def_pos}5 -3.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
-      (pad "" np_thru_hole circle (at 0 -5.95) (size 3 3) (drill 3) (layers *.Cu *.Mask))
-  
-      ${'' /* net pads */}
-      (pad 1 smd rect (at ${def_neg}3.275 -5.95 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask)  ${p.net.from.str})
-      (pad 2 smd rect (at ${def_pos}8.275 -3.75 ${p.rot}) (size 2.6 2.6) (layers ${def_side}.Cu ${def_side}.Paste ${def_side}.Mask)  ${p.local_net('Diode').str})
-
-      ${''/* pins */}
-      (pad 1 thru_hole circle (at ${def_pos}5 3.8) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.net.from.str})
-      (pad 2 thru_hole circle (at ${def_pos}0 5.9) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.local_net('Diode').str})
+      (fp_line (start 1.6 ${-1.4 + RGB_Offset}) (end 1.6 ${1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
+      (fp_line (start 1.6 ${1.4 + RGB_Offset}) (end -1.6 ${1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
+      (fp_line (start -1.6 ${1.4 + RGB_Offset}) (end -1.6 ${-1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
+      (fp_line (start -1.6 ${-1.4 + RGB_Offset}) (end 1.6 ${-1.4 + RGB_Offset}) (layer Cmts.User) (width 0.12))
+      (fp_line (start 1.7 ${-1.5 + RGB_Offset}) (end 1.7 ${1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start 1.7 ${1.5 + RGB_Offset}) (end -1.7 ${1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.7 ${1.5 + RGB_Offset}) (end -1.7 ${-1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
+      (fp_line (start -1.7 ${-1.5 + RGB_Offset}) (end 1.7 ${-1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
+      (fp_poly (pts (xy 2.8 ${-1.4 + RGB_Offset}) (xy 2.2 ${-1.4 + RGB_Offset}) (xy 2.2 ${-2 + RGB_Offset})) (layer F.SilkS) (width 0.1))
+      (pad "1" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
+      (pad "2" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
+      (pad "4" smd rect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask"))
+      (pad "3" smd roundrect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25))
+          
       `
+    }
+
+    function key_hotswap(reverse) {
+        return `
+        ${'' /* holes */}
+        (pad "" np_thru_hole circle (at ${reverse ? '-' : ''}5 -3.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+        (pad "" np_thru_hole circle (at 0 -5.95) (size 3 3) (drill 3) (layers *.Cu *.Mask))
+    
+        ${'' /* net pads */}
+        (pad 1 smd rect (at ${reverse ? '' : '-'}3.275 -5.95 ${p.rot}) (size 2.6 2.6) (layers ${reverse ? 'F' : 'B'}.Cu ${reverse ? 'F' : 'B'}.Paste ${reverse ? 'F' : 'B'}.Mask)  ${p.net.from.str})
+        (pad 2 smd rect (at ${reverse ? '-' : ''}8.275 -3.75 ${p.rot}) (size 2.6 2.6) (layers ${reverse ? 'F' : 'B'}.Cu ${reverse ? 'F' : 'B'}.Paste ${reverse ? 'F' : 'B'}.Mask)  ${p.local_net('Diode').str})
+        `
+    }
+
+    function key_pins(reverse) {
+      return `
+      ${''/* pins */}
+      (pad 1 thru_hole circle (at ${reverse ? '-' : ''}5 3.8) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.net.from.str})
+      (pad 2 thru_hole circle (at ${reverse ? '-' : ''}0 5.9) (size 2.032 2.032) (drill 1.27) (layers *.Cu *.Mask) ${p.local_net('Diode').str})
+      `
+  }
+
+    function key(reverse, hotswap) {
+      template = ``
+
+      if (hotswap) {
+        template += key_hotswap(false)
+        if (reverse)
+          template += key_hotswap(true)
+      } else {
+        template += key_pins(false)
+        if (reverse)
+          template += key_pins(true)
+      }
+
+      return template
     }
 
     if(p.param.reverse) {
@@ -243,15 +265,18 @@ module.exports = {
         ${standard}
         ${p.param.keycaps ? keycap : ''}
         ${p.param.diode ? diode(p.param.reverse, p.param.diode_silks) : ''}
-        ${pins('-', '', 'B')}
-        ${pins('', '-', 'F')})
+        ${key(p.param.reverse, p.param.hotswap)}
+        ${p.param.rgb ? rgb(p.param.reverse) : ''}
+        )
         `
     } else {
       return `
         ${standard}
         ${p.param.keycaps ? keycap : ''}
         ${p.param.diode ? diode(p.param.reverse, p.param.diode_silks) : ''}
-        ${pins('-', '', 'B')})
+        ${p.param.rgb ? rgb(p.param.reverse) : ''}
+        ${key(p.param.reverse, p.param.hotswap)}
+        )
         `
     }
   }
