@@ -25,4 +25,5 @@ module.exports = {
     bat: require('./bat'),
     b3u1000p: require('./b3u1000p'),
     resetw: require('./resetw'),
+    SK6812MINI: require('./SK6812MINI-E'),
 }
