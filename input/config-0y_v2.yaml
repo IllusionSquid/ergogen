@@ -1,0 +1,338 @@
+points:
+  key:
+    padding: cy
+    footprints:
+      choc_hotswap:
+        type: choc_diode
+        nets:
+          from: =column_net
+          to: =row_net
+          vss: GND
+          vdd: VCC
+          din: =din
+          dout: =dout
+        params:
+          keycaps: true
+          reverse: true
+          diode: true
+          hotswap: true
+          rgb: true
+          key_silks: true
+          traces: true
+  zones:
+    matrix:
+      anchor:
+        rotate: 16
+        shift: [50, -100]
+      columns:
+        pinky:
+          row_overrides:
+            bottom:
+              column_net: Col4
+              row_net: Row2
+              din: S2-S1
+              dout: S1-NULL
+              bind: [0, 1, 0, 1]
+            home:
+              column_net: Col4
+              row_net: Row1
+              din: S3-S2
+              dout: S2-S1
+              bind: [0, 7, 0, 1]
+            top:
+              column_net: Col4
+              row_net: Row0
+              din: S6-S3
+              dout: S3-S2
+              bind: [0, 7, 0, 1]
+        ring:
+          spread: 20
+          rotate: -5
+          origin: [-12, -19]
+          stagger: 15
+          row_overrides:
+            bottom:
+              column_net: Col3
+              row_net: Row2
+              din: S7-S4
+              dout: S4-S5
+              bind: [0, 1, 0, 7]
+            home:
+              column_net: Col3
+              row_net: Row1
+              din: S4-S5
+              dout: S5-S6
+            top:
+              column_net: Col3
+              row_net: Row0
+              din: S5-S6
+              dout: S6-S3
+              bind: [0, 7, 0, 1]
+        middle:
+          rotate: -3
+          origin: [-12, -19]
+          stagger: 10
+          row_overrides:
+            bottom:
+              column_net: Col2
+              row_net: Row2
+              din: S8-S7
+              dout: S7-S4
+              bind: [0, 7, 0, 7]
+            home:
+              column_net: Col2
+              row_net: Row1
+              din: S9-S8
+              dout: S8-S7
+              bind: [0, 0, 0, 7]
+            top:
+              column_net: Col2
+              row_net: Row0
+              din: S12-S9
+              dout: S9-S8
+              bind: [0, 1, 0, 1]
+        index:
+          rotate: -6
+          stagger: -12
+          spread: 18.9
+          row_overrides:
+            bottom:
+              column_net: Col1
+              row_net: Row2
+              din: S16-S10
+              dout: S10-S11
+              bind: [0, 7, 0, 1]
+            home:
+              column_net: Col1
+              row_net: Row1
+              din: S10-S11
+              dout: S11-S12
+              bind: [0, 7, 0, 7]
+            top:
+              column_net: Col1
+              row_net: Row0
+              din: S11-S12
+              dout: S12-S9
+              bind: [0, 7, 0, 7]
+        inner:
+          row_overrides:
+            bottom:
+              column_net: Col0
+              row_net: Row2
+              din: S14-S13
+              dout: S13-S18
+            home:
+              column_net: Col0
+              row_net: Row1
+              din: S15-S14
+              dout: S14-S13
+            top:
+              column_net: Col0
+              row_net: Row0
+              din: LED
+              dout: S15-S14
+      rows:
+        bottom:
+        home:
+        top:
+          bind: [0, 7, 0, 0]
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row2
+              din: S17-S16
+              dout: S16-S10
+              bind: [20, 7, 0, 60]
+        home:
+          spread: 19
+          rotate: -28
+          origin: [-9, -9]
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row1
+              din: S18-S17
+              dout: S17-S16
+              bind: [0, 2, 0, 2]
+        far:
+          spread: 19
+          rotate: -28
+          origin: [-9.5, -9]
+          row_overrides:
+            thumb:
+              column_net: Col5
+              row_net: Row0
+              din: S13-S18
+              dout: S18-S17
+              bind: [0, 1, 0, 12]
+      rows:
+        thumb:
+  rotate: -2
+pcbs:
+  main:
+    outlines:
+      main:
+        outline: cutout
+    footprints:
+      promicro:
+        type: promicro_pretty
+        anchor:
+          ref: matrix_inner_home
+          shift: [19, 9]
+          rotate: -90
+        params:
+          orientation: down
+      resetw:
+        type: resetw
+        nets:
+          r1: RST  
+          r2: GND
+        anchor:
+          ref: matrix_inner_home
+          shift: [20, -28]
+          rotate: 90
+      # b3u1000p:
+      #   type: b3u1000p
+      #   nets:
+      #     r1: RST  
+      #     r2: GND
+      #   anchor:
+      #     ref: matrix_inner_home
+      #     shift: [20, -28]
+      #     rotate: 90
+      #   params:
+      #     reverse: true
+      # via2:
+      #   type: via
+      #   anchor:
+      #     ref: matrix_inner_home
+      #     shift: [23, -28]
+      #   nets:
+      #     net: RST
+      # via3:
+      #   type: via
+      #   anchor:
+      #     ref: matrix_inner_home
+      #     shift: [17, -28]
+      #   nets:
+      #     net: GND
+      via4:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [24.4, -30]
+        nets:
+          net: RAW
+      via5:
+        type: via
+        anchor:
+          ref: matrix_inner_home
+          shift: [25.5, -30]
+        nets:
+          net: pos
+      # viar0:
+      #   type: via
+      #   anchor:
+      #     ref: matrix_inner_top
+      #     shift: [10, -0.35]
+      #   nets:
+      #     net: Row0
+      pcm12:
+        type: pcm12
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [35.7, 6]
+          rotate: 90
+        nets:
+          from: pos  
+          to: RAW
+        params:
+          reverse: true 
+      # trrs:
+      #   type: trrs
+      #   anchor:
+      #     ref: thumbfan_near_thumb
+      #     shift: [38, 12]
+      #     rotate: -90
+      #   nets:
+      #     A: SCL
+      #     B: SCL
+      #     C: GND
+      #     D: VCC
+      #   params:
+      #     reverse: true
+      #     symmetric: true
+      bat:
+        type: bat
+        nets: 
+          neg: GND
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [20, 10]
+          rotate: 90
+      # rgb:
+      #   type: SK6812MINI
+      #   nets:
+      #     r1: K17
+      #     r2: K16
+      #   anchor:
+      #     ref: thumbfan_near_thumb
+      #     shift: [0, 0]
+      #     rotate: 0
+      # diode:
+      #   type: diode
+      #   nets:
+      #     from: D1
+      #     to: Row0
+      #   anchor:
+      #     ref: matrix_pinky_top
+      #     shift: [8, -2]
+      #     rotate: -90
+      rot1:
+        type: rotary
+        nets:
+          from: P18
+          to: P15
+          A: P14
+          B: GND
+          C: P16
+        anchor: 
+          ref: thumbfan_near_thumb
+          shift: [-20, 0]
+      oled:
+        type: oled
+        nets:
+          SDA: P10
+          SCL: SCL
+        anchor: 
+          ref: matrix_inner_home
+          shift: [19, -12]
+          rotate: -180
+          
+outlines:
+  exports:
+    raw: 
+      - type: keys
+        side: left
+        size: [1cx - 0.5 , 1cx -0.5]
+      - type: rectangle
+        size: [23, 67.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [8, -25]
+      
+    cutout:
+      - type: outline
+        name: raw
+        fillet: 2
+    keycap_outlines:
+      - type: keys
+        side: left
+        size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
+        bound: false
