@@ -245,13 +245,96 @@ outlines:
         anchor:
           ref: matrix_inner_bottom
           shift: [8, -25]
+    plate: 
+      - type: keys
+        side: left
+        size: [1cx + 5, 1cx + 5]
+      - type: rectangle
+        size: [23 + 2.75, 67.75 + 2.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [8, -25]
+    key_zones:
+      - type: rectangle # Index col
+        size: [(1cx - 0.5) * 2 + 1.5, (1cy - 0.5) * 3]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [-(1cx - 0.5) * 1.5 - 1.5, -(1cy - 0.5) * 0.5]
+      - type: rectangle # middle col
+        size: [(1cx - 0.5) * 2 + 1.5, (1cy - 0.5) * 3]
+        anchor:
+          ref: matrix_middle_bottom
+          shift: [-(1cx - 0.5) * 1.5 - 1.5, -(1cy - 0.5) * 0.5]
       
     cutout:
       - type: outline
         name: raw
+        fillet: 2
+    cutoutbig:
+      - type: outline
+        name: plate
         fillet: 2
     keycap_outlines:
       - type: keys
         side: left
         size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
         bound: false
+    key_cutout:
+      - type: outline
+        name: keycap_outlines
+        fillet: 1
+      - type: outline
+        name: key_zones
+        fillet: 1 
+cases:
+  both_case:
+    - type: outline # default option
+      name: cutoutbig
+      extrude: 8.6 # default = 1
+      shift: [0, 0, 0] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: add # default = add
+    - type: outline # default option
+      name: cutout
+      extrude: 1.6 # default = 1
+      shift: [0, 0, 0] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: subtract # default = add
+    - type: outline # default option
+      name: key_cutout
+      extrude: 8 # default = 1
+      shift: [0, 0, 1.6] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: subtract # default = add
+  # top_case:
+  #   - type: outline # default option
+  #     name: cutoutbig
+  #     extrude: 9.6 # default = 1
+  #     shift: [0, 0, 0] # default = [0, 0, 0]
+  #     rotate: [0, 0, 0] # default = [0, 0, 0]
+  #     operation: add # default = add
+  #   - type: outline # default option
+  #     name: cutout
+  #     extrude: 1.6 # default = 1
+  #     shift: [0, 0, 0] # default = [0, 0, 0]
+  #     rotate: [0, 0, 0] # default = [0, 0, 0]
+  #     operation: subtract # default = add
+  #   - type: outline # default option
+  #     name: keycap_outlines
+  #     extrude: 8 # default = 1
+  #     shift: [0, 0, 1.6] # default = [0, 0, 0]
+  #     rotate: [0, 0, 0] # default = [0, 0, 0]
+  #     operation: subtract # default = add
+  # bottom_case:
+  #   - type: outline # default option
+  #     name: cutoutbig
+  #     extrude: 10 # default = 1
+  #     shift: [0, 0, 2] # default = [0, 0, 0]
+  #     rotate: [0, 0, 0] # default = [0, 0, 0]
+  #     operation: subtract # default = add
+  #   # - type: outline # default option
+  #   #   name: cutout
+  #   #   extrude: 4 # default = 1
+  #   #   shift: [0, 0, 2] # default = [0, 0, 0]
+  #   #   rotate: [0, 0, 0] # default = [0, 0, 0]
+  #   #   operation: subtract # default = add
