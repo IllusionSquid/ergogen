@@ -237,23 +237,23 @@ module.exports = {
       (fp_line (start -1.7 ${-1.5 + RGB_Offset}) (end 1.7 ${-1.5 + RGB_Offset}) (layer Edge.Cuts) (width 0.12))
 
       (fp_poly (pts (xy 2.8 ${1.4 + RGB_Offset}) (xy 2.2 ${1.4 + RGB_Offset}) (xy 2.2 ${2 + RGB_Offset})) (layer B.SilkS) (width 0.1))
-      (pad "1" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.vdd.str})
-      (pad "2" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.dout.str})
-      (pad "4" smd rect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.din.str})
-      (pad "3" smd roundrect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) ${p.net.vss.str})
+      (pad "4" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.vdd.str})
+      (pad "5" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.dout.str})
+      (pad "7" smd rect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") ${p.net.din.str})
+      (pad "6" smd roundrect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) ${p.net.vss.str})
 
       
       `
       if (reverse)
         template += `
         (fp_poly (pts (xy 2.8 ${-1.4 + RGB_Offset}) (xy 2.2 ${-1.4 + RGB_Offset}) (xy 2.2 ${-2 + RGB_Offset})) (layer F.SilkS) (width 0.1))
-        (pad "1" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.vdd.str})
-        (pad "2" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.dout.str})
-        (pad "4" smd rect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.din.str})
-        (pad "3" smd roundrect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) ${p.net.vss.str})  
+        (pad "4" smd rect (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.vdd.str})
+        (pad "5" smd rect (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.dout.str})
+        (pad "7" smd rect (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") ${p.net.din.str})
+        (pad "6" smd roundrect (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 1.7 0.82) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) ${p.net.vss.str})  
 
-        (pad 3 thru_hole circle (at 5.5 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.vss.str})
-        (pad 3 smd custom (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.vss.str}
+        (pad 6 thru_hole circle (at 5.5 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.vss.str})
+        (pad 6 smd custom (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.vss.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -261,7 +261,7 @@ module.exports = {
             (gr_line (start 2.2 0) (end 2.95 0.75) (width 0.25))
           )
         )
-        (pad 3 smd custom (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vss.str}
+        (pad 6 smd custom (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vss.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -270,8 +270,8 @@ module.exports = {
           )
         )
 
-        (pad 4 thru_hole circle (at 4.3 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.din.str})
-        (pad 4 smd custom (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.din.str}
+        (pad 7 thru_hole circle (at 4.3 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.din.str})
+        (pad 7 smd custom (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.din.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -279,7 +279,7 @@ module.exports = {
             (gr_line (start 1 0) (end 1.75 -0.75) (width 0.25))
           )
         )
-        (pad 4 smd custom (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.din.str}
+        (pad 7 smd custom (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.din.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -288,8 +288,8 @@ module.exports = {
           )
         )
 
-        (pad 2 thru_hole circle (at -5.5 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.dout.str})
-        (pad 2 smd custom (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.dout.str}
+        (pad 5 thru_hole circle (at -5.5 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.dout.str})
+        (pad 5 smd custom (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.dout.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -297,7 +297,7 @@ module.exports = {
             (gr_line (start -2.2 0) (end -2.95 0.75) (width 0.25))
           )
         )
-        (pad 2 smd custom (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.dout.str}
+        (pad 5 smd custom (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.dout.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -306,8 +306,8 @@ module.exports = {
           )
         )
 
-        (pad 1 thru_hole circle (at -4.3 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.vdd.str})
-        (pad 1 smd custom (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.vdd.str}
+        (pad 4 thru_hole circle (at -4.3 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.vdd.str})
+        (pad 4 smd custom (at -2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.vdd.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
@@ -315,7 +315,7 @@ module.exports = {
             (gr_line (start -1 0) (end -1.75 -0.75) (width 0.25))
           )
         )
-        (pad 1 smd custom (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vdd.str}
+        (pad 4 smd custom (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vdd.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
