@@ -26,4 +26,5 @@ module.exports = {
     b3u1000p: require('./b3u1000p'),
     resetw: require('./resetw'),
     SK6812MINI: require('./SK6812MINI-E'),
+    pimoroni_trackball: require('./pimoroni_trackball'),
 }
