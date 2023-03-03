@@ -159,9 +159,9 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.25))
-        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.25))
-        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.25))
+        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.5))
+        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.5))
+        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.5))
       ) ${p.net.GND.str})
     (pad "" thru_hole circle (at -13.97 7.62) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask)
       (zone_connect 0))
@@ -234,7 +234,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -8.89 6.35 ${p.rot + 180}) (size 0.25 1) (layers F.Cu)
+    (pad "" smd custom (at -8.89 6.35 ${p.rot + 180}) (size 0.5 1) (layers F.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -255,7 +255,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -6.35 6.35 ${p.rot + 180}) (size 0.25 1) (layers F.Cu)
+    (pad "" smd custom (at -6.35 6.35 ${p.rot + 180}) (size 0.5 1) (layers F.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -481,7 +481,7 @@ module.exports = {
           (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
   ) (width 0))
       ))
-    (pad "" smd custom (at -11.43 -6.35 ${p.rot}) (size 0.25 1) (layers F.Cu)
+    (pad "" smd custom (at -11.43 -6.35 ${p.rot}) (size 0.5 1) (layers F.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -494,7 +494,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -13.97 -6.35 ${p.rot}) (size 0.25 1) (layers F.Cu)
+    (pad "" smd custom (at -13.97 -6.35 ${p.rot}) (size 0.5 1) (layers F.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -622,7 +622,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -6.35 -6.35 ${p.rot}) (size 0.25 1) (layers F.Cu)
+    (pad "" smd custom (at -6.35 -6.35 ${p.rot}) (size 0.5 1) (layers F.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -696,7 +696,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -13.97 6.35 ${p.rot + 180}) (size 0.25 1) (layers B.Cu)
+    (pad "" smd custom (at -13.97 6.35 ${p.rot + 180}) (size 0.5 1) (layers B.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -717,7 +717,7 @@ module.exports = {
           (xy 0.6 -0.4) (xy -0.6 -0.4) (xy -0.6 -0.2) (xy 0 0.4) (xy 0.6 -0.2)
   ) (width 0))
       ))
-    (pad "" smd custom (at -11.43 6.35 ${p.rot + 180}) (size 0.25 1) (layers B.Cu)
+    (pad "" smd custom (at -11.43 6.35 ${p.rot + 180}) (size 0.5 1) (layers B.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -759,7 +759,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -6.35 6.35 ${p.rot + 180}) (size 0.25 1) (layers B.Cu)
+    (pad "" smd custom (at -6.35 6.35 ${p.rot + 180}) (size 0.5 1) (layers B.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -998,7 +998,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -8.89 -6.35 ${p.rot}) (size 0.25 1) (layers B.Cu)
+    (pad "" smd custom (at -8.89 -6.35 ${p.rot}) (size 0.5 1) (layers B.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -1019,7 +1019,7 @@ module.exports = {
           (xy 0.6 0) (xy -0.6 0) (xy -0.6 -1) (xy 0 -0.4) (xy 0.6 -1)
   ) (width 0))
       ))
-    (pad "" smd custom (at -6.35 -6.35 ${p.rot}) (size 0.25 1) (layers B.Cu)
+    (pad "" smd custom (at -6.35 -6.35 ${p.rot}) (size 0.5 1) (layers B.Cu)
       (zone_connect 0)
       (options (clearance outline) (anchor rect))
       (primitives
@@ -1220,9 +1220,9 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-        (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-        (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+        (gr_line (start 0 0) (end -0.866 0.866) (width 0.5))
+        (gr_line (start -0.866 0.866) (end -0.866 4.722) (width 0.5))
+        (gr_line (start -0.866 4.722) (end 0 5.588) (width 0.5))
       ))
     (pad 2 thru_hole circle (at -11.43 -0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.GND.str})
     (pad 23 thru_hole circle (at -11.43 0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.P0.str})
@@ -1240,17 +1240,17 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-        (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-        (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+        (gr_line (start 0 0) (end -0.866 0.866) (width 0.5))
+        (gr_line (start -0.866 0.866) (end -0.866 4.722) (width 0.5))
+        (gr_line (start -0.866 4.722) (end 0 5.588) (width 0.5))
       ))
     (pad 1 smd custom (at -13.97 -0.762 ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.RAW.str}
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.25))
-        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.25))
-        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.25))
+        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.5))
+        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.5))
+        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.5))
       ))
     (pad 24 smd custom (at -13.97 0.762 ${p.rot + 180}) (size 0.25 0.25) (layers F.Cu) ${p.net.P1.str}
       (zone_connect 0)
@@ -1266,9 +1266,9 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-        (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-        (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+        (gr_line (start 0 0) (end -0.866 0.866) (width 0.5))
+        (gr_line (start -0.866 0.866) (end -0.866 4.722) (width 0.5))
+        (gr_line (start -0.866 4.722) (end 0 5.588) (width 0.5))
       ))
     (pad 3 smd custom (at -8.89 -0.762 ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.RST.str}
       (zone_connect 0)
@@ -1290,9 +1290,9 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end 0.762 -0.762) (width 0.25))
-        (gr_line (start 0.762 -0.762) (end 0.762 -3.302) (width 0.25))
-        (gr_line (start 0.762 -3.302) (end 0 -4.064) (width 0.25))
+        (gr_line (start 0 0) (end 0.762 -0.762) (width 0.5))
+        (gr_line (start 0.762 -0.762) (end 0.762 -3.302) (width 0.5))
+        (gr_line (start 0.762 -3.302) (end 0 -4.064) (width 0.5))
       ))
     (pad 21 thru_hole circle (at -6.35 0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.GND.str})
     (pad 4 thru_hole circle (at -6.35 -0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.VCC.str})
@@ -1300,33 +1300,33 @@ module.exports = {
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-        (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-        (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+        (gr_line (start 0 0) (end -0.866 0.866) (width 0.5))
+        (gr_line (start -0.866 0.866) (end -0.866 4.722) (width 0.5))
+        (gr_line (start -0.866 4.722) (end 0 5.588) (width 0.5))
       ))
     (pad 4 smd custom (at -6.35 -0.762 ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.VCC.str}
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end -0.766 0.766) (width 0.25))
-        (gr_line (start -0.766 0.766) (end -0.766 4.822) (width 0.25))
-        (gr_line (start -0.766 4.822) (end 0 5.588) (width 0.25))
+        (gr_line (start 0 0) (end -0.866 0.866) (width 0.5))
+        (gr_line (start -0.866 0.866) (end -0.866 4.722) (width 0.5))
+        (gr_line (start -0.866 4.722) (end 0 5.588) (width 0.5))
       ))
     (pad 4 smd custom (at -6.35 -0.762 ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.VCC.str}
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.25))
-        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.25))
-        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.25))
+        (gr_line (start 0 0) (end 0.766 -0.766) (width 0.5))
+        (gr_line (start 0.766 -0.766) (end 0.766 -3.298) (width 0.5))
+        (gr_line (start 0.766 -3.298) (end 0 -4.064) (width 0.5))
       ))
     (pad 21 smd custom (at -6.35 0.762 ${p.rot + 180}) (size 0.25 0.25) (layers F.Cu) ${p.net.GND.str}
       (zone_connect 0)
       (options (clearance outline) (anchor circle))
       (primitives
-        (gr_line (start 0 0) (end 0.762 -0.762) (width 0.25))
-        (gr_line (start 0.762 -0.762) (end 0.762 -3.302) (width 0.25))
-        (gr_line (start 0.762 -3.302) (end 0 -4.064) (width 0.25))
+        (gr_line (start 0 0) (end 0.762 -0.762) (width 0.5))
+        (gr_line (start 0.762 -0.762) (end 0.762 -3.302) (width 0.5))
+        (gr_line (start 0.762 -3.302) (end 0 -4.064) (width 0.5))
       ))
     (pad 20 thru_hole circle (at -3.81 0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.P2.str})
     (pad 5 thru_hole circle (at -3.81 -0.762 ${p.rot + 180}) (size 0.8 0.8) (drill 0.4) (layers *.Cu) ${p.net.P21.str})

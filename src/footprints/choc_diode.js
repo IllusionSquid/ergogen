@@ -254,19 +254,19 @@ module.exports = {
 
         (pad 6 thru_hole circle (at 5.5 ${RGB_Offset}) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.vss.str})
         (pad 6 smd custom (at 2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers F.Cu) ${p.net.vss.str}
-          (zone_connect 0)
+          (zone_connect 2)
           (options (clearance outline) (anchor circle))
           (primitives
-            (gr_line (start 0 0) (end 2.2 0) (width 0.25))
-            (gr_line (start 2.2 0) (end 2.95 0.75) (width 0.25))
+            (gr_line (start 0 0) (end 2.2 0) (width 0.5))
+            (gr_line (start 2.2 0) (end 2.95 0.75) (width 0.5))
           )
         )
         (pad 6 smd custom (at 2.55 ${0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vss.str}
-          (zone_connect 0)
+          (zone_connect 2)
           (options (clearance outline) (anchor circle))
           (primitives
-            (gr_line (start 0 0) (end 2.2 0) (width 0.25))
-            (gr_line (start 2.2 0) (end 2.95 -0.75) (width 0.25))
+            (gr_line (start 0 0) (end 2.2 0) (width 0.5))
+            (gr_line (start 2.2 0) (end 2.95 -0.75) (width 0.5))
           )
         )
 
@@ -311,16 +311,16 @@ module.exports = {
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
-            (gr_line (start 0 0) (end -1 0) (width 0.25))
-            (gr_line (start -1 0) (end -1.75 -0.75) (width 0.25))
+            (gr_line (start 0 0) (end -1 0) (width 0.5))
+            (gr_line (start -1 0) (end -1.75 -0.75) (width 0.5))
           )
         )
         (pad 4 smd custom (at -2.55 ${-0.75+ RGB_Offset} ${p.rot}) (size 0.25 0.25) (layers B.Cu) ${p.net.vdd.str}
           (zone_connect 0)
           (options (clearance outline) (anchor circle))
           (primitives
-            (gr_line (start 0 0) (end -1 0) (width 0.25))
-            (gr_line (start -1 0) (end -1.75 0.75) (width 0.25))
+            (gr_line (start 0 0) (end -1 0) (width 0.5))
+            (gr_line (start -1 0) (end -1.75 0.75) (width 0.5))
           )
         )
         `
