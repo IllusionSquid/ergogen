@@ -19,6 +19,8 @@ points:
           rgb: true
           key_silks: true
           traces: true
+        anchor:
+          rotate: 180
   zones:
     matrix:
       anchor:
@@ -184,7 +186,7 @@ pcbs:
         type: promicro_pretty
         anchor:
           ref: matrix_inner_home
-          shift: [19, 9]
+          shift: [22, 9]
           rotate: -90
         params:
           orientation: down
@@ -195,33 +197,8 @@ pcbs:
           r2: GND
         anchor:
           ref: matrix_inner_home
-          shift: [20, -28]
+          shift: [12, -12]
           rotate: 90
-      # b3u1000p:
-      #   type: b3u1000p
-      #   nets:
-      #     r1: RST  
-      #     r2: GND
-      #   anchor:
-      #     ref: matrix_inner_home
-      #     shift: [20, -28]
-      #     rotate: 90
-      #   params:
-      #     reverse: true
-      # via2:
-      #   type: via
-      #   anchor:
-      #     ref: matrix_inner_home
-      #     shift: [23, -28]
-      #   nets:
-      #     net: RST
-      # via3:
-      #   type: via
-      #   anchor:
-      #     ref: matrix_inner_home
-      #     shift: [17, -28]
-      #   nets:
-      #     net: GND
       via4:
         type: via
         anchor:
@@ -236,13 +213,6 @@ pcbs:
           shift: [25.5, -30]
         nets:
           net: pos
-      # viar0:
-      #   type: via
-      #   anchor:
-      #     ref: matrix_inner_top
-      #     shift: [10, -0.35]
-      #   nets:
-      #     net: Row0
       pcm12:
         type: pcm12
         anchor:
@@ -254,20 +224,19 @@ pcbs:
           to: RAW
         params:
           reverse: true 
-      # trrs:
-      #   type: trrs
-      #   anchor:
-      #     ref: thumbfan_near_thumb
-      #     shift: [38, 12]
-      #     rotate: -90
-      #   nets:
-      #     A: SCL
-      #     B: SCL
-      #     C: GND
-      #     D: VCC
-      #   params:
-      #     reverse: true
-      #     symmetric: true
+      trrs:
+        type: trrs
+        anchor:
+          ref: thumbfan_near_thumb
+          shift: [45, 61.743]
+        nets:
+          A: SCL
+          B: SCL
+          C: GND
+          D: VCC
+        params:
+          reverse: true
+          symmetric: true
       bat:
         type: bat
         nets: 
@@ -276,35 +245,18 @@ pcbs:
           ref: thumbfan_near_thumb
           shift: [20, 10]
           rotate: 90
-      # rgb:
-      #   type: SK6812MINI
-      #   nets:
-      #     r1: K17
-      #     r2: K16
-      #   anchor:
-      #     ref: thumbfan_near_thumb
-      #     shift: [0, 0]
-      #     rotate: 0
-      # diode:
-      #   type: diode
-      #   nets:
-      #     from: D1
-      #     to: Row0
-      #   anchor:
-      #     ref: matrix_pinky_top
-      #     shift: [8, -2]
-      #     rotate: -90
       rot1:
         type: rotary
         nets:
           from: P18
           to: P15
           A: P14
-          B: GND
-          C: P16
+          B: P16
+          C: GND
         anchor: 
           ref: thumbfan_near_thumb
           shift: [-20, 0]
+          rotate: -90
       oled:
         type: oled
         nets:
@@ -312,7 +264,13 @@ pcbs:
           SCL: SCL
         anchor: 
           ref: matrix_inner_home
-          shift: [19, -12]
+          shift: [39, 5]
+          rotate: -90
+      trackball:
+        type: pimoroni_trackball
+        anchor: 
+          ref: thumbfan_home_thumb
+          shift: [0, 30]
           rotate: -180
           
 outlines:
@@ -322,17 +280,75 @@ outlines:
         side: left
         size: [1cx - 0.5 , 1cx -0.5]
       - type: rectangle
-        size: [23, 67.75]
+        size: [33, 67.75]
         anchor:
           ref: matrix_inner_bottom
           shift: [8, -25]
+      - type: rectangle
+        size: [13, 67.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [28, -45]
+    plate: 
+      - type: keys
+        side: left
+        size: [1cx + 5, 1cx + 5]
+      - type: rectangle
+        size: [33 + 2.75, 67.75 + 2.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [8, -25]
+      - type: rectangle
+        size: [13 + 2.75, 67.75 + 2.75]
+        anchor:
+          ref: matrix_inner_bottom
+          shift: [28, -45]
       
     cutout:
       - type: outline
         name: raw
+        fillet: 2
+    cutout2:
+      - type: outline
+        name: raw
+        fillet: 2
+    cutoutbig:
+      - type: outline
+        name: plate
         fillet: 2
     keycap_outlines:
       - type: keys
         side: left
         size: [1cx - 0.5, 1cy - 0.5] # Choc keycaps are 17.5 x 16.5
         bound: false
+    keycut_outlines:
+      - type: keys
+        side: left
+        size: [14, 14] # Choc keycaps are 17.5 x 16.5
+        bound: false
+cases:
+  both_case:
+    - type: outline # default option
+      name: cutoutbig
+      extrude: 8.6 # default = 1
+      shift: [0, 0, 0] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: add # default = add
+    - type: outline # default option
+      name: cutout2
+      extrude: 5.8 # default = 1
+      shift: [0, 0, 2.8] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: subtract # default = add
+    - type: outline # default option
+      name: cutout
+      extrude: 1.6 # default = 1
+      shift: [0, 0, 0] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: subtract # default = add
+    - type: outline # default option
+      name: keycut_outlines
+      extrude: 8 # default = 1
+      shift: [0, 0, 1.6] # default = [0, 0, 0]
+      rotate: [0, 0, 0] # default = [0, 0, 0]
+      operation: subtract # default = add
