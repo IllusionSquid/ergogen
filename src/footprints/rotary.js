@@ -97,43 +97,43 @@ module.exports = {
             (fp_line (start ${offset[0] + 0} ${offset[1] + -0.55}) (end ${offset[0] + -0.75} ${offset[1] + -0.55}) (layer "F.SilkS") (width 0.1))
             (fp_line (start ${offset[0] + 0.6} ${offset[1] + -0.95}) (end ${offset[0] + 0.6} ${offset[1] + -0.15}) (layer "F.SilkS") (width 0.1))
 
-            (pad "2" smd custom (at ${offset[0] + 0.75} ${offset[1] + -0.55} 270) (size 0.25 0.25) (layers "F.Cu")
+            (pad "2" smd custom (at ${offset[0] + 0.75} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.25 0.25) (layers "F.Cu")
               (zone_connect 0)
               (options (clearance outline) (anchor circle))
               (primitives
                 (gr_line (start 0 0) (end 0 -1.15) (width 0.25))
               ))
-            (pad "2" smd custom (at ${offset[0] + 0.75} ${offset[1] + -0.55} 270) (size 0.25 0.25) (layers "B.Cu")
+            (pad "2" smd custom (at ${offset[0] + 0.75} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.25 0.25) (layers "B.Cu")
               (zone_connect 0)
               (options (clearance outline) (anchor circle))
               (primitives
                 (gr_line (start 0 0) (end 0 -1.15) (width 0.25))
               ))
 
-            (pad "2" smd rect (at ${offset[0] + 1.9} ${offset[1] + -0.55} 180) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask"))
-            (pad "2" smd rect (at ${offset[0] + 1.9} ${offset[1] + -0.55} 180) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask"))
+            (pad "2" smd rect (at ${offset[0] + 1.9} ${offset[1] + -0.55} ${p.rot + 180}) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask"))
+            (pad "2" smd rect (at ${offset[0] + 1.9} ${offset[1] + -0.55} ${p.rot + 180}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask"))
             
-            (pad "2" smd custom (at ${offset[0] + 1.9} ${offset[1] + -0.55}) (size 0.25 0.25) (layers "F.Cu")
+            (pad "2" smd custom (at ${offset[0] + 1.9} ${offset[1] + -0.55} ${p.rot}) (size 0.25 0.25) (layers "F.Cu")
               (zone_connect 0)
               (options (clearance outline) (anchor circle))
               (primitives
                 (gr_line (start 0 0) (end 0 6.188) (width 0.25))
               ))
-            (pad "2" thru_hole circle (at ${offset[0] + 0.75} ${offset[1] + -0.55} 270) (size 0.6 0.6) (drill 0.3) (layers *.Cu)
+            (pad "2" thru_hole circle (at ${offset[0] + 0.75} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.6 0.6) (drill 0.3) (layers *.Cu)
               (zone_connect 2))
 
-            (pad "3" smd rect (at ${offset[0] + -1.4} ${offset[1] + -0.55} 180) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask"))
-            (pad "3" smd rect (at ${offset[0] + -1.4} ${offset[1] + -0.55} 180) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask"))
+            (pad "3" smd rect (at ${offset[0] + -1.4} ${offset[1] + -0.55} ${p.rot + 180}) (size 0.9 1.2) (layers "F.Cu" "F.Paste" "F.Mask"))
+            (pad "3" smd rect (at ${offset[0] + -1.4} ${offset[1] + -0.55} ${p.rot + 180}) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask"))
             
-            (pad "3" thru_hole circle (at ${offset[0] + -0.25} ${offset[1] + -0.55} 270) (size 0.6 0.6) (drill 0.3) (layers *.Cu)
+            (pad "3" thru_hole circle (at ${offset[0] + -0.25} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.6 0.6) (drill 0.3) (layers *.Cu)
               (zone_connect 2))
-            (pad "3" smd custom (at ${offset[0] + -0.25} ${offset[1] + -0.55} 270) (size 0.25 0.25) (layers "F.Cu")
+            (pad "3" smd custom (at ${offset[0] + -0.25} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.25 0.25) (layers "F.Cu")
               (zone_connect 0)
               (options (clearance outline) (anchor circle))
               (primitives
                 (gr_line (start 0 0) (end 0 1.15) (width 0.25))
               ))
-            (pad "3" smd custom (at ${offset[0] + -0.25} ${offset[1] + -0.55} 270) (size 0.25 0.25) (layers "B.Cu")
+            (pad "3" smd custom (at ${offset[0] + -0.25} ${offset[1] + -0.55} ${p.rot + 270}) (size 0.25 0.25) (layers "B.Cu")
               (zone_connect 0)
               (options (clearance outline) (anchor circle))
               (primitives
