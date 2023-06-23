@@ -49,7 +49,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at -3.81 3.875 ${p.rot}) (size 0.1 0.1) (layers F.Cu F.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -61,7 +61,7 @@ module.exports = {
           )
         )
         (pad 4 smd custom (at -3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers F.Cu F.Mask) ${p.net.GND.str}
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -79,7 +79,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at -1.27 3.875 ${p.rot}) (size 0.1 0.1) (layers F.Cu F.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -91,7 +91,7 @@ module.exports = {
           )
         )
         (pad 3 smd custom (at -1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers F.Cu F.Mask) ${p.net.VCC.str}
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -109,7 +109,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at 1.27 3.875 ${p.rot}) (size 0.1 0.1) (layers F.Cu F.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -121,7 +121,7 @@ module.exports = {
           )
         )
         (pad 2 smd custom (at 1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers F.Cu F.Mask) ${p.net.SCL.str}
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -139,7 +139,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at 3.81 3.875 ${p.rot}) (size 0.1 0.1) (layers F.Cu F.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -151,7 +151,7 @@ module.exports = {
           )
         )
         (pad 1 smd custom (at 3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers F.Cu F.Mask) ${p.net.SDA.str}
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -170,7 +170,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at -3.81 3.875 ${p.rot}) (size 0.1 0.1) (layers B.Cu B.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -181,8 +181,8 @@ module.exports = {
             )
           )
         )
-        (pad 4 smd custom (at -3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.GND.str}
-          (clearance 0.1) (zone_connect 0)
+        (pad 1 smd custom (at -3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.SDA.str}
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -200,7 +200,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at -1.27 3.875 ${p.rot}) (size 0.1 0.1) (layers B.Cu B.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -211,8 +211,8 @@ module.exports = {
             )
           )
         )
-        (pad 3 smd custom (at -1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.VCC.str}
-          (clearance 0.1) (zone_connect 0)
+        (pad 2 smd custom (at -1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.SCL.str}
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -230,7 +230,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at 1.27 3.875 ${p.rot}) (size 0.1 0.1) (layers B.Cu B.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -241,8 +241,8 @@ module.exports = {
             )
           )
         )
-        (pad 2 smd custom (at 1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.SCL.str}
-          (clearance 0.1) (zone_connect 0)
+        (pad 3 smd custom (at 1.27 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.VCC.str}
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -260,7 +260,7 @@ module.exports = {
           (primitives)
         )
         (pad "" smd custom (at 3.81 3.875 ${p.rot}) (size 0.1 0.1) (layers B.Cu B.Mask)
-          (clearance 0.1) (zone_connect 0)
+          (clearance 0) (zone_connect 0)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -271,8 +271,8 @@ module.exports = {
             )
           )
         )
-        (pad 1 smd custom (at 3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.SDA.str}
-          (clearance 0.1) (zone_connect 0)
+        (pad 4 smd custom (at 3.81 4.891 ${p.rot}) (size 1.2 0.5) (layers B.Cu B.Mask) ${p.net.GND.str}
+          (clearance 0) (zone_connect 1)
           (options (clearance outline) (anchor rect))
           (primitives
             (gr_poly 
@@ -283,6 +283,12 @@ module.exports = {
             )
           )
         )
+
+
+        (pad 4 thru_hole circle (at -3.81 5.891) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.GND.str})
+        (pad 3 thru_hole circle (at -1.27 5.891) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.VCC.str})
+        (pad 2 thru_hole circle (at 1.27 5.891) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.SCL.str})
+        (pad 1 thru_hole circle (at 3.81 5.891) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (zone_connect 2) ${p.net.SDA.str})
       
       )
         `
